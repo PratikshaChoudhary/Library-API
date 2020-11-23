@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADD BOOK</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("form").on("submit",function(event){
+        // prevent the form from submitting normally
+          event.preventDefault();
+
+          var formdata = JSON.stringify({"bookname": $('#bookname').val(),"Aname": $('#Aname').val()})
+      
+          // Send the data using post
+          $.ajax({
+            url: 'http://localhost:3001/add',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: formdata,
+            success: function (data) {
+                if(data.Status==1) {
+                  alert(data.Message);
+                } else {
+                  alert("Book details has been added sucessfully")
+                }
+            },
+            error: function(data, err){ 
+             console.log('my message: ' + err); 
+            }
+          });
+
+          // $.post("http://localhost:3001/add",
+          //   formdata,
+          //   function(data){
+          //     if(data.Status==0)
+          //     alert(data.Message);
+          //     else
+          //     alert("Some Error occured")
+          //   },
+          //   'json'
+          //   )
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <br>
+    <h1><b>TO ADD BOOK TO LIBRARY</b></h1>
+
+    <div>
+    <form  name="myForm" >
+      <fieldset>
+        <legend ><b>Book info:</b></legend>	<br>
+        <label for="bookname">Book name: </label><br>
+        <input type="text" id="bookname" name="bookname" placeholder="Enter book name here..." required><br>
+        <label for="Aname">Author name: </label><br>
+        <input type="text" id="Aname" name="Aname" placeholder="Enter Author name here... " required><br><br>
+        <input type="submit" value="ADD">
+      </fieldset>
+    </form>
+    <button id="redirect_button" onclick="location.href='http://localhost:3001/display/'" > BOOK LIST</button>
+    </div> 
+  </body>
+</html>
+
+<!-- $.ajax({
+      url: 'http://localhost:3001/add',
+      type: 'post',
+      dataType: 'json',
+      contentType: 'application/json',
+      data: formdata,
+      success: function (data) {
+          if(data.Status==1)
+        alert(data.Message);
+      },
+       error: function(data, err){ 
+       console.log('my message: ' + err); 
+       }
+      
+    });
+-->

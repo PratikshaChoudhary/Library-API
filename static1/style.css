@@ -1,0 +1,67 @@
+body {
+  background-image: url('b5.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 4px 4px #aaa;
+}
+
+input[type=text], select {
+  width: 65%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  display: inline-block;
+  background-color: #ECF0F1 ;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 35%;
+  background-color: #D2691E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #A0522D;
+}
+
+div {
+  border-radius: 5px;
+  padding: 30px;
+  margin: 0% 10%;
+}	
+
+#redirect_button:hover {
+  background-color:  #A0522D;
+}
+          
+#redirect_button:active {
+  background-color:   #F4A460;
+  box-shadow: 0 0.125em #666666;
+}
+
+#redirect_button{
+  display: inline-block;
+  padding: 0.85em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  color: white;
+  background-color: #D2691E;
+  border: none;
+  border-radius: 0.62em;
+  box-shadow: 0 0.30em #999989; 
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+}

@@ -1,0 +1,65 @@
+body {
+	background-image: url('b10.jpeg');
+	background-attachment: fixed;
+  	background-size: cover;
+}
+
+h1 {
+	margin-left: 250px;
+	margin-top:	40px;
+	text-shadow: 4px 4px #bbb;
+}
+
+#book_list{
+	border-collapse: collapse;
+	font-family: sans-serif;
+	min-width: 700px;
+	box-shadow: 15px 10px 18px grey;
+}
+
+#book_list tr:hover{
+	background-color: #ccc;
+}
+
+#book_list td, #book_list th {
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+#book_list tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#book_list th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color:#C19A6B; 
+	color: white;
+	padding: 10px;
+}
+
+#redirect_button:hover {
+	background-color: #C19A6B ;
+}
+			
+#redirect_button:active {
+  	background-color: #C7A379;
+	box-shadow: 0 0.125em #666666;
+	transform: translateY(0.25em);
+}
+
+#redirect_button{
+	display: inline-block;
+	padding: 0.85em 1.5em;
+	font-size: 1em;
+	cursor: pointer;
+	color: white;
+	background-color: #AF814A;
+	border: none;
+	border-radius: 0.62em;
+	box-shadow: 0 0.30em #999989; 
+	position: fixed;
+	right: 0;
+	bottom: 30px;
+}

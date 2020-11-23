@@ -1,0 +1,42 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Display List</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+	</head>
+
+	<body>
+		<div class = "container">
+			<h1><b>LIST OF BOOKS</b></h1>
+			<button id="redirect_button" onclick="location.href='http://localhost:3001/add/'" > ADD NEW BOOK</button>
+			<br>
+
+			<table class = "table-structure" id = "book_list">
+				<tr>
+					<th>Book Name</th>
+					<th>Author Name</th>
+				</tr>
+		</div>
+		<script>
+		$(document).ready(function(){
+			$.getJSON("http://localhost:3001/display",function(data){
+				var book = '';
+				$.each(data,function(key,value){
+					book += '<tr>';
+					book += '<td>'+value.bookname+'</td>';
+					book += '<td>'+value.Aname+'</td>';
+					book += '</tr>';
+				});
+				$('#book_list').append(book)
+			});
+		});
+	</script>
+	</body>
+
+	</html>
+	
+
+
+  <!-- ORIGINAL TABLE FOR BOOK DISPLAY-->
+  
